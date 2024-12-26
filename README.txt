@@ -1,42 +1,59 @@
+# Sistema de Gestão de Atividades Diárias para Unidades Prisionais
 
+Este é um sistema desenvolvido para gerenciar as atividades diárias dentro de unidades prisionais. Ele permite a administração de tarefas, registros de atividades e visualização de relatórios.
 
-	1 - Baixar o Python ultima versão .
-	https://www.python.org/downloads/
+## Tabela de Conteúdos
+1- [Descrição](#descrição)
+2- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+3- [Como Rodar o Projeto](#como-rodar-o-projeto)
+4- [Estrutura de Diretórios](#estrutura-de-diretórios)
+5- [Como Contribuir](#como-contribuir)
+6- [Licença](#licença)
 
-	baixar Node js
-	https://nodejs.org/pt
+## Tecnologias Utilizadas
+- **Django**: Framework Python para desenvolvimento web.
+- **SQLite**: Banco de dados utilizado para persistência de dados.
+- **Bootstrap**: Framework CSS para criação de interfaces responsivas.
 
-	baixar todas as extensões Obs: dentro do Vs Code.
-	HTML: Extensão como HTML CSS Support.
-	CSS: Extensão CSS IntelliSense.
-	Django: Extensão como Django para facilitar o desenvolvimento em templates Django.
-	JavaScript: Extensão JavaScript (ES6).
-	
-	2 - dentro do terminal verificar a versão do python - 
-	python --version
-	
-	3 - já dentro do vscode com o repositorio aberto, ir ao terminal e abrir o 
-	ambiente virtual.   digite o comando. 
-	\venv\Scripts\activate
-	
-	4- Após isso instale o requirements.txt 
-	Obs: se não instalar pode ser que o o ambiente virual não esteja configurado ou possa ter bugado.
-	então sugiro que desinstale atual e reinstale novamente, e assim poderá tentar novamente instalar o requirements.txt
-	
-	
+## Como Rodar o Projeto
 
-	5 - Acessar a parta da windows e configurar o ip local
-C:\Windows\System32\drivers\etc\hosts
+1. Clone o repositório:
+    ```bash
+    git clone https://github.com/usuario/nome-do-repositorio.git
+    ```
 
-	6 - depois colocar dentro do setings.py do sistema 
-ALLOWED_HOSTS = ['IP LOCAL', 'localhost', '127.0.0.1']
-Modificar o nome ip local pelo ip da rede da maquina que desejar fazer a configuração paa deixar online o servidor.
+2. Crie e ative um ambiente virtual:
+    ```bash
+    python -m venv venv
+    .\venv\Scripts\activate  # No Windows
+    source venv/bin/activate  # No Linux/Mac
+    ```
 
+3. Instale as dependências:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
+4. Rode as migrações para configurar o banco de dados:
+    ```bash
+    python manage.py migrate
+    ```
 
+5. Execute o servidor de desenvolvimento:
+    ```bash
+    python manage.py runserver
+    ```
 
+6. Acesse o projeto no navegador em: [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
-	Comando para deixar o banco de dados ativo.. 
-usndo o power shell
-
-uvicorn banco_de_dados_upaca.asgi:application --host 10.110.37.178 --port 8000
+## Estrutura de Diretórios
+banco_de_dados_upaca/
+├── manage.py              
+├── banco_de_dados_upaca/  
+│   ├── __init__.py        
+│   ├── settings.py        
+│   ├── urls.py            
+│   ├── wsgi.py            
+│   ├── asgi.py            
+├── requirements.txt       
+└── README.md              
